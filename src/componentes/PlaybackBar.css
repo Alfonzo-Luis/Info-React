@@ -1,0 +1,20 @@
+.playback-bar{
+    display:flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding:  20px;
+    justify-content: space-between;
+    align-items:center;
+    z-index: 1000;
+    color: white;
+}
+.playback-bar img{
+    height: 100px;
+    width: 100px;
+    margin-right: 20px;
+}
+
+.current-Song h4 .current-Song p{
+    margin: 0;
+  }

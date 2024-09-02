@@ -1,0 +1,34 @@
+.playlist-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .playlist-form input, .playlist-form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .playlist-form button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .playlist-form button:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+  }
+  
+  .playlist-preview {
+    margin-top: 20px;
+  }
+  
+  .playlist-preview img {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+  }

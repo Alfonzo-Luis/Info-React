@@ -1,0 +1,42 @@
+.sidebar {
+  width: 300px;
+  background-color: #222;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: -300px; /* Inicialmente fuera de la vista */
+  height: 100%;
+  transition: left 0.3s ease;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.sidebar-open {
+  left: 0; /* Mueve el sidebar a la vista */
+}
+
+.playlist-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.playlist-form input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.playlist-form button {
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.playlist-form button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}

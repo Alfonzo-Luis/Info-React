@@ -1,0 +1,22 @@
+.album-card{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.album-card img {
+    margin-right: 10px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+
+.album-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.album-info h4, .album-info p{
+    margin: 0;
+}

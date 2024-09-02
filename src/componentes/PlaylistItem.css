@@ -1,0 +1,22 @@
+.playlist-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .playlist-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .playlist-info h4 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .playlist-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #aaa;
+  }
