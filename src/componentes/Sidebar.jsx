@@ -46,13 +46,13 @@ const Sidebar = ({ showSidebar, onClose, addPlaylist }) => {
         <div className="playlist-form">
           <input
             type="text"
-            placeholder="Título"
+            placeholder="Titulo"
             value={title}
             onChange={handleTitleChange}
           />
           <input
             type="text"
-            placeholder="Descripción"
+            placeholder="Descripcion"
             value={description}
             onChange={handleDescriptionChange}
           />
