@@ -8,7 +8,7 @@ const Header = ({ toggleSidebar }) => {
   return (
     <div>
    <header className="header">
-      <button onClick={toggleSidebar}>Toggle Sidebar</button>
+      <button onClick={toggleSidebar}>Menu</button>
       <img src={logoYoutube} className="logo" />
       <input type="text" className="search-bar" placeholder="Search..." />
       <div className="user-profile">

@@ -5,6 +5,7 @@ import AlbumCard from './componentes/AlbumCard';
 import ArtistCard from './componentes/ArtistCard';
 import PlaybackBar from './componentes/PlaybackBar';
 import Sidebar from './componentes/Sidebar';
+import PodcastList from './componentes/PodcastList';
 import './index.css';
 
 import { recentSongs, quickPicks, recommendedAlbums, similarArtists } from './data';
@@ -24,12 +25,17 @@ const App = () => {
   const addPlaylist = (playlist) => {
     setPlaylists([...playlists, playlist]);
   };
+
+
+  
   return (
     <div className="app">
       <Header toggleSidebar={toggleSidebar} />
       <Sidebar showSidebar={showSidebar} onClose={closeSidebar} addPlaylist={addPlaylist} />
       <div className='main'>
       <h2>Playlists</h2>
+      <h2>Podcasts</h2>
+        <PodcastList />
         <ul>
           {playlists.map((playlist, index) => (
             <li key={index}>

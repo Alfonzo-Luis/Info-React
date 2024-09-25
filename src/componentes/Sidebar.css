@@ -1,18 +1,18 @@
 .sidebar {
-  width: 300px;
+  width: 200px;
   background-color: #222;
   color: white;
   padding: 20px;
   position: fixed;
   top: 0;
-  left: -300px; /* Inicialmente fuera de la vista */
+  left: -300px; 
   height: 100%;
   transition: left 0.3s ease;
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  z-index: 1000; 
 }
 
 .sidebar-open {
-  left: 0; /* Mueve el sidebar a la vista */
+  left: 0; 
 }
 
 .playlist-form {

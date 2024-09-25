@@ -1,65 +1,50 @@
 import React, { useState } from 'react';
 import './PlaylistForm.css';
 
-const PlaylistForm = ({ addPlaylist }) => {
+const PlaylistForm = ({ addPlaylist, onClose }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [image, setImage] = useState('');
-  const [isValid, setIsValid] = useState(false);
+  const [imageUrl, setImageUrl] = useState('');
 
-  const handleInputChange = () => {
-    setIsValid(title !== '' && description !== '' && image !== '');
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (isValid) {
-      addPlaylist({ title, description, image });
-      setTitle('');
-      setDescription('');
-      setImage('');
-      setIsValid(false);
-    }
+  const handleAddPlaylist = () => {
+    addPlaylist({ title, description, imageUrl });
+    setTitle('');
+    setDescription('');
+    setImageUrl('');
+    onClose();  
   };
 
   return (
-    <form className="playlist-form" onSubmit={handleSubmit}>
+    <div className="playlist-form">
+      <h2>Nueva Playlist</h2>
       <input
         type="text"
         placeholder="Título"
         value={title}
-        onChange={(e) => {
-          setTitle(e.target.value);
-          handleInputChange();
-        }}
-      />
-      <textarea
-        placeholder="Descripción"
-        value={description}
-        onChange={(e) => {
-          setDescription(e.target.value);
-          handleInputChange();
-        }}
+        onChange={(e) => setTitle(e.target.value)}
       />
       <input
         type="text"
-        placeholder="Imagen (URL)"
-        value={image}
-        onChange={(e) => {
-          setImage(e.target.value);
-          handleInputChange();
-        }}
+        placeholder="Descripción"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
       />
-      <button type="submit" disabled={!isValid}>
+      <input
+        type="text"
+        placeholder="URL de imagen"
+        value={imageUrl}
+        onChange={(e) => setImageUrl(e.target.value)}
+      />
+      <button
+        onClick={handleAddPlaylist}
+        disabled={!title || !description || !imageUrl}
+      >
         Agregar Playlist
       </button>
-      <div className="playlist-preview">
-        <h4>{title}</h4>
-        <p>{description}</p>
-        {image && <img src={image} alt="Playlist cover" />}
-      </div>
-    </form>
+      <button onClick={onClose}>Cancelar</button>
+    </div>
   );
 };
+
 
 export default PlaylistForm;
