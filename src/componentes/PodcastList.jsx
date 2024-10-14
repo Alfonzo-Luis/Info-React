@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
-
 import './PodcastList.css';
+import PlaybackBar from './PlaybackBar'; // Importamos el PlaybackBar
 
 const PodcastList = () => {
   const [podcasts, setPodcasts] = useState([]);
@@ -8,34 +8,33 @@ const PodcastList = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
   const [error, setError] = useState(null);
+  const [currentPodcast, setCurrentPodcast] = useState(null); // Guardar el podcast que se está reproduciendo
 
   useEffect(() => {
     const fetchPodcasts = async () => {
       try {
-        console.log('Fetching podcasts...'); 
         const response = await fetch('https://api.audioboom.com/audio_clips');
-        console.log('Response status:', response.status); 
         if (!response.ok) {
           throw new Error('Error fetching data');
         }
         const data = await response.json();
-        console.log('Fetched podcasts:', data.body.audio_clips); 
         setPodcasts(data.body.audio_clips);
       } catch (error) {
         setError(error.message);
-        console.error('Error fetching podcasts:', error);
       }
     };
 
     fetchPodcasts();
   }, []);
 
-  const handlePlay = (url) => {
+  const handlePlay = (podcast) => {
+    const { high_mp3: url } = podcast.urls;
     if (currentAudio === url) {
       setIsPlaying((prev) => !prev);
     } else {
       setCurrentAudio(url);
       setIsPlaying(true);
+      setCurrentPodcast(podcast); // Guardar el podcast actual
     }
   };
 
@@ -86,7 +85,7 @@ const PodcastList = () => {
                 ? `${podcast.description.slice(0, 50)}...`
                 : podcast.description}
             </p>
-            <button onClick={() => handlePlay(podcast.urls.high_mp3)}>
+            <button onClick={() => handlePlay(podcast)}>
               {isPlaying && currentAudio === podcast.urls.high_mp3
                 ? 'Pause'
                 : 'Play'}
@@ -95,6 +94,17 @@ const PodcastList = () => {
         ))}
       </ul>
       <audio ref={audioRef} onEnded={() => setIsPlaying(false)} />
+      
+      {/* Agregar PlaybackBar, pasamos los datos del podcast actual */}
+      {currentPodcast && (
+        <PlaybackBar
+          isPlaying={isPlaying}
+          podcast={currentPodcast}
+          onPlayPause={() => setIsPlaying((prev) => !prev)}
+          audioRef={audioRef}
+          closePlayback={() => setCurrentPodcast(null)}
+        />
+      )}
     </div>
   );
 };
