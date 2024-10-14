@@ -1,20 +1,57 @@
-.playback-bar{
-    display:flex;
+.playback-bar {
+    display: flex;
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding:  20px;
+    padding: 20px;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
     z-index: 1000;
+    background-color: #181818;
     color: white;
-}
-.playback-bar img{
-    height: 100px;
-    width: 100px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .playback-bar img {
+    height: 64px;
+    width: 64px;
+    border-radius: 4px;
     margin-right: 20px;
-}
-
-.current-Song h4 .current-Song p{
+  }
+  
+  .current-track-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .track-details h4 {
+    font-size: 1.1em;
+    color: #fff;
     margin: 0;
+    font-weight: 500;
+  }
+  
+  .track-details p {
+    font-size: 0.9em;
+    color: #b3b3b3;
+    margin: 5px 0;
+  }
+  
+  .playback-controls {
+    display: fixed;
+    align-items: center;
+  }
+  
+  button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  
+  button:hover {
+    color: #1db954;
   }
