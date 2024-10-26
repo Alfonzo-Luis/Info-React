@@ -1,4 +1,14 @@
-.app{
+h2 {
+  position: relative;
+  color: white;
+  padding: 10px 20px;
+  background-color: #2A2A2A; /* Color más oscuro */
+  border-radius: 30px; /* Bordes redondeados */
+  margin: 20px 0; /* Margen para separar de otros elementos */
+  display: inline-block; /* Asegura que el fondo solo cubra el contenido del h2 */
+}
+
+.app {
   display: flex;
   flex-direction: row;
   background: #0C090B;
@@ -8,75 +18,41 @@
   align-items: center;
 }
 
-.sidebar-open ~ .main{
-  margin-left: 300px; 
+.sidebar-open ~ .main {
+  margin-left: 300px;
 }
 
-.main{
-  margin-left: 100px; 
-  transition: margin-left 0.3s ease; 
+.main {
+  margin-left: 100px;
+  transition: margin-left 0.3s ease;
   flex: 1;
 }
 
-h2{
-  right: 100px;
-  color: white;
-  margin-left: 20px;
-}
-
-.sidebar{
-  margin: 100px;
-}
-
-.listen-again{
+.sidebar,
+.listen-again,
+.song-list,
+.quick-picks,
+.recommended-albums,
+.album-list,
+.similar-artist,
+.artist-list {
   margin: 100px;
   color: white;
+}
+
+.listen-again {
   font-family: Arial;
   font-size: medium;
-  padding: auto;
   display: flex;
   padding: 20px;
 }
 
-
-.song-list{
-  margin: 100px;
-  color: white;
-}
-
-
-.quick-picks{
-  margin: 100px;
-  color: white;
-  margin-right: 20px;
-  min-width: 150px;
-
-}
-
-.recommended-albums{
-  margin: 100px;
-  color: white;
-  margin-right: 20px;
-  min-width: 150px;
-}
-
-.album-list{
-  margin: 100px;
-  color: white;
-  margin-right: 20px;
-  min-width: 150px;
-}
-
-.similar-artist{
-  margin: 100px;
-  color: white;
-  margin-right: 20px;
-  min-width: 150px;
-}
-
-.artist-list{
-  margin: 100px;
-  color: white;
+.song-list,
+.quick-picks,
+.recommended-albums,
+.album-list,
+.similar-artist,
+.artist-list {
   margin-right: 20px;
   min-width: 150px;
 }

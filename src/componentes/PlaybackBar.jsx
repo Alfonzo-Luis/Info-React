@@ -2,7 +2,7 @@ import React from 'react';
 import './PlaybackBar.css';
 
 const PlaybackBar = ({ podcast, isPlaying, onPlayPause, audioRef, closePlayback }) => {
-  if (!podcast) return null; // Asegurarse de que podcast no es null o undefined
+  if (!podcast) return null;
 
   const handleForward = () => {
     if (audioRef.current) {
@@ -19,7 +19,6 @@ const PlaybackBar = ({ podcast, isPlaying, onPlayPause, audioRef, closePlayback 
   return (
     <div className="playback-bar">
       <div>
-        {/* Verificar que la imagen y el canal existan antes de usarlos */}
         {podcast.channel?.urls?.logo_image?.original ? (
           <img
             src={podcast.channel.urls.logo_image.original}
@@ -28,7 +27,7 @@ const PlaybackBar = ({ podcast, isPlaying, onPlayPause, audioRef, closePlayback 
           />
         ) : (
           <img
-            src="default_image_path.jpg" // Añadir una imagen por defecto si no existe una
+            src="default_image_path.jpg"
             alt="Default Podcast"
             className="playback-image"
           />

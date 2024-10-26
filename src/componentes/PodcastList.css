@@ -1,12 +1,26 @@
-ul {
+.podcast-list-container {
+  position: relative;
+  width: 100%;
   display: flex;
-  gap: 20px;
+  align-items: center; 
+}
+
+.podcast-list {
+  display: flex;
+  overflow: hidden; 
+  flex-grow: 1; 
+}
+
+.podcast-list ul {
+  display: flex;
+  gap: 20px; 
   justify-content: flex-start;
   padding: 0;
   list-style-type: none;
+  transition: transform 0.3s ease-in-out;
 }
 
-li {
+.podcast-list li {
   background-color: #181818;
   border-radius: 8px;
   width: 200px;
@@ -18,32 +32,32 @@ li {
   cursor: pointer;
 }
 
-li:hover {
+.podcast-list li:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
-img {
+.podcast-list img {
   width: 100%;
   height: auto;
   border-radius: 8px;
   margin-bottom: 10px;
 }
 
-h3 {
+.podcast-list h3 {
   font-size: 1.1em;
   color: #fff;
   text-align: center;
   margin: 10px 0 5px 0;
 }
 
-p {
+.podcast-list p {
   font-size: 0.85em;
   color: #b3b3b3;
   text-align: center;
 }
 
-button {
+.podcast-list button {
   background-color: red;
   border: none;
   color: white;
@@ -55,6 +69,15 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: red;
+.podcast-list button:hover {
+  background-color: darkred;
+}
+
+.arrow {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
 }
